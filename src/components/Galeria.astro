@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import "photoswipe/style.css";
+---
+
+<div class="pswp-gallery" id="gallery">
+    <a
+        href="/carrusel/carrusel-1.jpg"
+        data-pswp-width="1875"
+        data-pswp-height="2500"
+        target="_blank"
+    >
+        <Image src="/carrusel/carrusel-1.jpg" alt="" height="200" width="180" />
+    </a>
+    <a
+        href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+        data-pswp-width="1669"
+        data-pswp-height="2500"
+        target="_blank"
+    >
+        <img
+            src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg"
+            alt=""
+        />
+    </a>
+    <a
+        href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+        data-pswp-width="2500"
+        data-pswp-height="1666"
+        target="_blank"
+    >
+        <img
+            src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg"
+            alt=""
+        />
+    </a>
+</div>
+<script>
+    import PhotoSwipeLightbox from "photoswipe/lightbox";
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: "#gallery",
+        children: "a",
+        pswpModule: () => import("photoswipe"),
+    });
+
+    lightbox.init();
+</script>
